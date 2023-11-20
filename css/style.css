@@ -1,0 +1,55 @@
+body {
+    background-color: #d0f4de;
+}
+
+.todo-app {
+    margin-top: 2rem;
+}
+
+
+.todo-box {
+    background-color: #a9def9;
+    border-radius: 1.4rem;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    min-width: 7rem;
+    height: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+}
+
+.todo-box input {
+    width: 90%;
+    min-width: 5rem;
+    font-size: 2rem;
+    background-color: inherit;
+    border: none;
+    padding-left: 1rem;
+    outline: none;
+}
+
+.todo-box input::placeholder {
+    color: black;
+    letter-spacing: -1px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+    font-weight: bolder;
+    padding: 1rem 1.6rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+}
+
+.render-task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-type {
+    font-size: 1.8rem;
+}
