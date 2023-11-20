@@ -8,6 +8,16 @@ addBtn.addEventListener('click', () => {
     saveToStorage();
 });
 
+const editBtn = document.querySelector('.edit-btn');
+editBtn.addEventListener('click', () => {
+    console.log('edit Btn')
+})
+
+const deleteBtn = document.querySelector('.delete-btn');
+deleteBtn.addEventListener('click', () => {
+    console.log('delete Btn')
+})
+
 task.addEventListener('keydown', (event) => {
     if(event.code === 'Enter') {
         addTask(task);
