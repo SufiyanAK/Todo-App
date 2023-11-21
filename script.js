@@ -1,5 +1,20 @@
 const todoTask = JSON.parse(localStorage.getItem('todoTask')) || [];
 
+let todoTaskHTML = '';
+
+todoTask.forEach(value => {
+    todoTaskHTML += 
+    `
+    <p class="task-type">${value}</p>
+    <div class="btns">
+        <p class="btn edit-btn"><i class="bi bi-exposure"></i></p>
+        <p class="btn delete-btn"><i class="bi bi-trash"></i></p>
+    </div>
+    `;
+})
+
+document.querySelector('.render-task').innerHTML = todoTaskHTML;
+
 const task =  document.querySelector('#todo-task');
 
 const addBtn = document.querySelector('.add-btn');
