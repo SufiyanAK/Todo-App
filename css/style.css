@@ -19,7 +19,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
 }
 
-.todo-box input {
+.todo-box input, .task-type {
     width: 90%;
     min-width: 5rem;
     font-size: 2rem;

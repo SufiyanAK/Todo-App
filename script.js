@@ -7,41 +7,29 @@ function renderTodoList() {
         todoTaskHTML += 
         `
         <div>
-            <p class="task-type">${task}</p>
+            <input readonly class="task-type" data-index="${index}" value="${task}">
             <div class="btns">
                 <p class="btn edit-btn"><i class="bi bi-exposure"></i></p>
                 <p class="btn delete-btn" onclick="deleteTodo(${index})"><i class="bi bi-trash"></i></p>
             </div>
         </div>
         `;
-    })
+        });
     document.querySelector('.render-task').innerHTML = todoTaskHTML;
 }
 
-const task =  document.querySelector('#todo-task');
-
-const addBtn = document.querySelector('.add-btn');
-addBtn.addEventListener('click', () => {
-    addTask(task);
-    saveToStorage();
-});
-
-task.addEventListener('keydown', (event) => {
-    if(event.code === 'Enter') {
-        addTask();
-    }
-})
+const input =  document.querySelector('#todo-task');
 
 function addTask() {
-    let value = task.value;
+    let task = input.value;
 
-    if (value.trim() === '') {
+    if (task.trim() === '') {
         return;
     }
 
-    todoTask.push({value});
+    todoTask.push({task});
 
-    task.value = '';
+    input.value = '';
 
     renderTodoList();
 
@@ -53,8 +41,24 @@ function deleteTodo(index) {
     renderTodoList();
 }
 
+function editTask () {
+
+}
+
 function saveToStorage() {
     localStorage.setItem('todoTask',JSON.stringify(todoTask));
 }
 
 renderTodoList();
+
+const addBtn = document.querySelector('.add-btn');
+addBtn.addEventListener('click', () => {
+    addTask();
+    saveToStorage();
+});
+
+input.addEventListener('keydown', (event) => {
+    if(event.code === 'Enter') {
+        addTask();
+    }
+})
