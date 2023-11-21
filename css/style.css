@@ -44,7 +44,7 @@ body {
     cursor: pointer;
 }
 
-.render-task {
+.render-task div {
     display: flex;
     align-items: center;
     justify-content: space-between;
